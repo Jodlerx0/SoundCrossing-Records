@@ -15,7 +15,7 @@ function App() {
           <AboutUs />
         </section>
 
-      <main className="pt-20">
+      <main className="pt-0">
         <section id="discography" className="min-h-screen">
           <Discography />
         </section>
