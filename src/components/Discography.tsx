@@ -20,7 +20,7 @@ function Discography() {
     {
       image: '/soundcro02b.jpg',
       title: 'Varios EP',
-      artist: 'Various',
+      artist: 'Manuel Jelen, Dr. Kozo, Nu Zau, Psykoloco',
       catalogNumber: 'SOUNDCRO02',
       link: 'https://www.discogs.com/release/4369184-Various-Varios-EP',
     },
