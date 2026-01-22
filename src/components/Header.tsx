@@ -31,17 +31,20 @@ function Header({ activeSection, setActiveSection }: HeaderProps) {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="flex-shrink-0">
+      <div className="max-w-7xl mx-auto px-0 flex items-start justify-between">
+
+        {/* LOGO ESQUINA SUPERIOR IZQUIERDA */}
+        <div className="flex-shrink-0 m-0 p-0">
           <img
             src="/soundcrossingrecords.net.png"
             alt="SoundCrossing Records"
-            className="h-12 w-auto cursor-pointer hover:opacity-80 transition-opacity"
+            className="h-[99px] w-auto cursor-pointer"
             onClick={() => scrollToSection('about')}
           />
         </div>
 
-        <nav className="flex items-center gap-8">
+        {/* BOTONES CENTRADOS VERTICALMENTE */}
+        <nav className="flex items-center gap-8 pr-4">
           <button
             onClick={() => scrollToSection('about')}
             className={`text-sm font-medium tracking-wider uppercase transition-colors ${
@@ -50,6 +53,7 @@ function Header({ activeSection, setActiveSection }: HeaderProps) {
           >
             About Us
           </button>
+
           <button
             onClick={() => scrollToSection('discography')}
             className={`text-sm font-medium tracking-wider uppercase transition-colors ${
@@ -58,6 +62,7 @@ function Header({ activeSection, setActiveSection }: HeaderProps) {
           >
             Discography
           </button>
+
           <button
             onClick={() => scrollToSection('playmoon')}
             className={`text-sm font-medium tracking-wider uppercase transition-colors ${
@@ -67,6 +72,7 @@ function Header({ activeSection, setActiveSection }: HeaderProps) {
             Playmoon Events
           </button>
         </nav>
+
       </div>
     </header>
   );
