@@ -49,13 +49,6 @@ function Discography() {
       link: '#',
     },
     {
-      image: '/scr003.jpg',
-      title: 'Silence EP',
-      artist: 'MAAB',
-      catalogNumber: 'SCR003',
-      link: '#',
-    },
-    {
       image: '/scr004.jpg',
       title: 'De larna EP',
       artist: 'Marcman, (Inc Dorian Paic Remix)',
