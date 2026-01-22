@@ -35,14 +35,14 @@ function Discography() {
       link: '#',
     },
     {
-      image: '/SRC002.jpg',
+      image: '/SCR002.jpg',
       title: 'Limitare EP',
       artist: 'Little Hado',
       catalogNumber: 'SCR002',
       link: '#',
     },
     {
-      image: '/SRC003.jpg',
+      image: '/SCR003.jpg',
       title: 'Silence EP',
       artist: 'MAAB',
       catalogNumber: 'SCR003',
