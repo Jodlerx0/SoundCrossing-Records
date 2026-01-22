@@ -11,13 +11,13 @@ function App() {
     <div className="min-h-screen bg-black">
       <Header activeSection={activeSection} setActiveSection={setActiveSection} />
 
+        <section id="about" className="min-h-screen">
+          <AboutUs />
+        </section>
+
       <main className="pt-20">
         <section id="discography" className="min-h-screen">
           <Discography />
-        </section>
-
-        <section id="about" className="min-h-screen">
-          <AboutUs />
         </section>
 
         <section id="playmoon" className="min-h-screen">
