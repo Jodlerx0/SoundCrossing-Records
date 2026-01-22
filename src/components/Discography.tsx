@@ -13,7 +13,7 @@ function Discography() {
     {
       image: '/soundcro01b.jpg',
       title: 'Sugar EP',
-      artist: 'Faster',
+      artist: 'Faster, (Inc Dr. Kozo remix)',
       catalogNumber: 'SOUNDCRO01',
       link: 'https://www.discogs.com/release/3916648-Faster-Sugar-EP',
     },
