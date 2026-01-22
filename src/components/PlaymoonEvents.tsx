@@ -1,6 +1,21 @@
-import { Calendar } from 'lucide-react';
+import { useRef } from "react";
 
 function PlaymoonEvents() {
+  const sliderRef = useRef<HTMLDivElement | null>(null);
+
+  // ORDEN INVERSO: Playmoon25 → Playmoon1
+  const flyers = Array.from({ length: 25 }, (_, i) => `/Playmoon${25 - i}.jpg`);
+
+  const scrollLeft = () => {
+    if (!sliderRef.current) return;
+    sliderRef.current.scrollBy({ left: -300, behavior: "smooth" });
+  };
+
+  const scrollRight = () => {
+    if (!sliderRef.current) return;
+    sliderRef.current.scrollBy({ left: 300, behavior: "smooth" });
+  };
+
   return (
     <div className="bg-black text-white py-20">
       <div className="max-w-7xl mx-auto px-4">
@@ -10,14 +25,72 @@ function PlaymoonEvents() {
 
         <div className="max-w-3xl mx-auto text-center mb-12">
           <p className="text-lg text-zinc-400 leading-relaxed">
-            Playmoon is our main event series, connecting artists and audiences across the underground electronic music community.
+            Playmoon is our main event series, connecting artists and audiences
+            across the underground electronic music scene.
           </p>
         </div>
 
-        <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-12 min-h-[400px] flex flex-col items-center justify-center">
-          <Calendar className="text-zinc-600 mb-4" size={64} />
-          <p className="text-zinc-500 text-lg">Event flyers coming soon</p>
-          <p className="text-zinc-600 text-sm mt-2">Stay tuned for upcoming Playmoon events</p>
+        {/* SLIDER DE MAYOR A MENOR */}
+        <div className="relative bg-zinc-900 border border-zinc-800 rounded-lg p-8 overflow-hidden">
+
+          {/* Flecha izquierda */}
+          <button
+            onClick={scrollLeft}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-black/60 hover:bg-black/80 text-white px-3 py-2 rounded-full"
+          >
+            ‹
+          </button>
+
+          {/* CARRUSEL */}
+          <div
+            ref={sliderRef}
+            className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth px-10"
+          >
+            {flyers.map((src, index) => {
+              // Escala descendente: grande → pequeño
+              const scale = 1 - index * 0.03;
+              const finalScale = Math.max(scale, 0.4);
+
+              return (
+                <div
+                  key={index}
+                  className="flex-shrink-0 rounded-lg overflow-hidden border border-zinc-700"
+                  style={{
+                    width: `${250 * finalScale}px`,
+                    height: `${350 * finalScale}px`,
+                    transition: "transform 0.3s ease",
+                  }}
+                >
+                  <img
+                    src={src}
+                    alt={`Playmoon Flyer ${25 - index}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Flecha derecha */}
+          <button
+            onClick={scrollRight}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-black/60 hover:bg-black/80 text-white px-3 py-2 rounded-full"
+          >
+            ›
+          </button>
+        </div>
+
+        {/* REPRODUCTOR YOUTUBE */}
+        <div className="mt-12 flex justify-center">
+          <iframe
+            width="100%"
+            height="400"
+            className="max-w-3xl rounded-lg border border-zinc-800 shadow-lg"
+            src="https://www.youtube.com/embed/VLnVCiP0AjA?list=PLtEkO6L700iS-VoIyrX6rfHj0246COZB8"
+            title="Playmoon Playlist"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </div>
       </div>
     </div>
