@@ -13,7 +13,7 @@ function App() {
 
       <main className="pt-20">
         <section id="discography" className="min-h-screen">
-          < />
+          <Discography />
         </section>
 
         <section id="about" className="min-h-screen">
