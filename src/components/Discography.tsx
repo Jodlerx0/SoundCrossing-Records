@@ -35,7 +35,7 @@ function Discography() {
       link: '#',
     },
     {
-      image: '/scr02.jpg',
+      image: '/scr002.jpg',
       title: 'Limitare EP',
       artist: 'Little Hado',
       catalogNumber: 'SCR002',
