@@ -17,7 +17,7 @@ function App() {
         </section>
 
         <section id="about" className="min-h-screen">
-          </>
+          <AboutUs />
         </section>
 
         <section id="playmoon" className="min-h-screen">
