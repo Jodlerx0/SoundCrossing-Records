@@ -8,29 +8,32 @@ function PlaymoonEvents() {
 
   const scrollLeft = () => {
     if (!sliderRef.current) return;
-    sliderRef.current.scrollBy({ left: -300, behavior: "smooth" });
+    sliderRef.current.scrollBy({ left: -400, behavior: "smooth" });
   };
 
   const scrollRight = () => {
     if (!sliderRef.current) return;
-    sliderRef.current.scrollBy({ left: 300, behavior: "smooth" });
+    sliderRef.current.scrollBy({ left: 400, behavior: "smooth" });
   };
 
   return (
     <div className="bg-black text-white py-20">
       <div className="max-w-7xl mx-auto px-4">
+        
+        {/* TÍTULO */}
         <h2 className="text-5xl font-bold mb-12 text-center tracking-tight">
           Playmoon Events
         </h2>
 
+        {/* DESCRIPCIÓN */}
         <div className="max-w-3xl mx-auto text-center mb-12">
           <p className="text-lg text-zinc-400 leading-relaxed">
             Playmoon is our main event series, connecting artists and audiences
-            across the underground electronic music scene.
+            across the underground electronic music community.
           </p>
         </div>
 
-        {/* SLIDER DE MAYOR A MENOR */}
+        {/* SLIDER */}
         <div className="relative bg-zinc-900 border border-zinc-800 rounded-lg p-8 overflow-hidden">
 
           {/* Flecha izquierda */}
@@ -46,29 +49,18 @@ function PlaymoonEvents() {
             ref={sliderRef}
             className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth px-10"
           >
-            {flyers.map((src, index) => {
-              // Escala descendente: grande → pequeño
-              const scale = 1 - index * 0.03;
-              const finalScale = Math.max(scale, 0.4);
-
-              return (
-                <div
-                  key={index}
-                  className="flex-shrink-0 rounded-lg overflow-hidden border border-zinc-700"
-                  style={{
-                    width: `${250 * finalScale}px`,
-                    height: `${350 * finalScale}px`,
-                    transition: "transform 0.3s ease",
-                  }}
-                >
-                  <img
-                    src={src}
-                    alt={`Playmoon Flyer ${25 - index}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              );
-            })}
+            {flyers.map((src, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 w-48 h-64 bg-zinc-800 rounded-lg overflow-hidden border border-zinc-700"
+              >
+                <img
+                  src={src}
+                  alt={`Playmoon Flyer ${25 - index}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
           </div>
 
           {/* Flecha derecha */}
@@ -92,6 +84,7 @@ function PlaymoonEvents() {
             allowFullScreen
           ></iframe>
         </div>
+
       </div>
     </div>
   );
