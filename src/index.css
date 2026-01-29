@@ -2,10 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Si quieres algo global extra, lo pones aquí */
 body {
-  background-image: url('public/background.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
+  margin: 0;
+  background-color: #000; /* por si acaso mientras carga */
 }
