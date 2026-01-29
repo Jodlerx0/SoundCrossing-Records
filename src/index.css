@@ -2,53 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <title>Fondo 3D</title>
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: #050505;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: system-ui, sans-serif;
-      color: #fff;
-    }
-
-    .bg-tiles {
-      position: fixed;
-      inset: 0;
-      background-color: #050505;
-      background-image:
-        linear-gradient(135deg, #111 25%, transparent 25%),
-        linear-gradient(315deg, #111 25%, transparent 25%),
-        linear-gradient(45deg, #222 25%, transparent 25%),
-        linear-gradient(225deg, #000 25%, transparent 25%);
-      background-size: 80px 80px;
-      background-position: 0 0, 40px 40px, 40px 0, 0 40px;
-      filter: drop-shadow(0 0 10px #000);
-    }
-
-    .content {
-      position: relative;
-      z-index: 1;
-      padding: 2rem 3rem;
-      background: rgba(0, 0, 0, 0.6);
-      border-radius: 16px;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
-    }
-  </style>
-</head>
-<body>
-  <div class="bg-tiles"></div>
-  <div class="content">
-    <h1>Mi Web</h1>
-    <p>Fondo 3D tipo paneles oscuros.</p>
-  </div>
-</body>
-</html>
+/* Si quieres algo global extra, lo pones aquí */
+body {
+  margin: 0;
+  background-color: #000; /* por si acaso mientras carga */
+}
