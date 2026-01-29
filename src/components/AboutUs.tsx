@@ -10,7 +10,7 @@ function AboutUs() {
 
         <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-8 md:p-12">
           <p className="text-lg leading-relaxed text-zinc-300">
-            SoundCrossing Records is an independent electronic music label founded in 2011 and based in London, Uk,
+            SoundCrossing Records is an independent electronic music label founded in 2009 and based in London, Uk,
             created with the mission of showcasing the deeper and more experimental side of underground electronic music.
             The label also extends its creative presence through Playmoon, its main event series.
           </p>
